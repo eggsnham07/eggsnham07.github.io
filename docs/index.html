@@ -8,6 +8,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+        <script src="script/devconsole.js"></script>
 
     </head>
     <body id="wrapper">
@@ -26,7 +27,7 @@
 <!--TODO load Javascript scripting here-->
                 </textarea>
                 <br>
-                <input type="submit" value="Run">
+                <input type="submit" value="Run"><button onclick="clearConsole()">Clear Console</button>
             </div>
             <br>
         </form>
@@ -35,49 +36,28 @@
         </div>
 
         <script>
+            console.info("Javascript IDE Started!")
             var js = document.getElementById("jsCode")
-            const begginerJS = `setTimeout(function(){
-alert("This is part of the Javascript below!")
-}, 1000)`
-
+            const scripting = document.createElement("script")
 
             window.onload = function() {
-                document.getElementById("jsCode").value = begginerJS.toString()
                 loadScript()
-                console.info("Javascript IDE Starting!")
             }
             document.getElementById("code").addEventListener("submit", function(e) {runScript();})
 
             function loadScript() {
-                js.value = localStorage.getItem("SavedJS")
-                var scripting = document.createElement("script")
-                scripting.innerHTML =  `${localStorage.getItem("SavedJS")}`
+                js.value = localStorage.getItem("SavedJS") || begginerJS
+                scripting.innerHTML = loadJs || begginerJS
                 document.body.appendChild(scripting)
-                console.info("Javascript IDE Started!")
             }
-
             function runScript() {
                 localStorage.setItem("SavedJS", js.value)
                 window.location.reload
             }
+            
 
-            /*
-                JavaScript IDE
-            */
-            console.error = function(e) {
-                $("#console").append(`Error: ${e}<br>`)
-            }
-
-            console.warn = function(w) {
-                $("#console").append(`Warning: ${w}<br>`)
-            }
-
-            console.info = function(i) {
-                $("#console").append(`Info: ${i}<br>`)
-            }
-
-            console.log = function(log) {
-                $("#console").append(log + "<br>")
+            clearConsole = function(message) {
+                $("#console").innerHTML = `Info: Javascript IDE Started!`
             }
         </script>
     </body>

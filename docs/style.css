@@ -45,3 +45,18 @@ body  {
     text-align: left;
     background-color: #999;
 }
+
+
+/*
+* Javascript IDE Console
+*/
+.error {
+    color: red;
+}
+.warning {
+    color: yellow;
+}
+
+
+
+
