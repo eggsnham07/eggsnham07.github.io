@@ -1,75 +1,27 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <!--MetaData-->
-        <meta property="og:image" content="https://git.eggsnham.com/favicon.png" xmlns="https://opengraphprotocol.org/schema/">
-        <meta name="description" content="Web based JavaScript IDE">
-        <!--Load CSS-->
-        <link rel="stylesheet" href="style.css">
-        <!--Set Title-->
-        <title>Web Based JavaScript IDE</title>
-        <!--Load JS-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="script/devconsole.js"></script>
+  <head>
+    <!--MetaData-->
+    <title>Web IDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web Based IDE for HTML, CSS, and JavaScript developers">
+    <meta property="og:image" content="git.eggsnham.com/favicon.ico">
+    <!--CSS-->
+    <link rel="stylesheet" href="./style.css" />
+    <!--JavaScript-->
+    <script src="./script/IDE.js"></script>
+  </head>
 
-    </head>
-    <body id="wrapper">
-        <form id="code">
-            <br>
-            <div id="HTML">
-                <h1>Welcome to the website!</h1>
-                <h3>This Website Is Built For People to Test Javascript in the Browser</h3>
-                <p>if you want to use the current CSS this site is using then in your own file put in <code>&lt;link rel="stylesheet" href="https://git.eggsnham.com/styles.css"&gt;</code> before the <code>&lt;/head&gt;</code> tag</p>
-                <noscript><span style="color:red;">This website requires Javascript to run, please enable it!</span></noscript>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div style="margin:0;width:100%;height:512px">
-                <textarea id="jsCode" style="margin:0px;width:60%;height:100%;resize: none;" >
-<!--TODO load Javascript scripting here (if you are seeing this javascript may be disabled)-->
-                </textarea>
-                <br>
-                <input type="submit" value="Run"><button onclick="clearConsole()">Clear Console</button>
-            </div>
-            <br>
-        </form>
-        <div style="border: 10px solid #333;width:60%; margin-left: 19.5%;">
-            <pre class="content" id="console" style="width:100%;"></pre>
-        </div>
+  <body>
+    <textarea id="html"></textarea>
+    <textarea id="css"></textarea>
+    <textarea id="js"></textarea>
+    <iframe id="code"></iframe>
 
-        <script>
-            console.info("Javascript IDE Started!")
-            var js = document.getElementById("jsCode")
-            const scripting = document.createElement("script")
-
-            window.onload = function() {
-                loadScript()
-            }
-            document.getElementById("code").addEventListener("submit", function(e) {runScript();})
-
-            function loadScript() {
-                js.value = localStorage.getItem("SavedJS") || begginerJS
-                scripting.innerHTML = loadJs || begginerJS
-                document.body.appendChild(scripting)
-            }
-            function runScript() {
-                localStorage.setItem("SavedJS", js.value)
-                window.location.reload
-            }
-            
-
-            clearConsole = function(message) {
-                $("#console").innerHTML = `Info: Javascript IDE Started!`
-            }
-
-            var text = document.getElementById("jsCode")
-                text.onkeydown = function(e) {
-                    if (e.key == "Tab" || e.which === 9) {
-                        e.preventDefault()
-                        text.value = `${text.value}   `
-                    }
-                };
-        </script>
-    </body>
+    <script>
+        document.getElementById("html").innerHTML = `<!--HTML-->\n\n<h1>Welcome to the Website!</h1>\n<h3>This website is for creating HTML, CSS, and JS webpages</h3>`
+        document.getElementById("css").innerHTML = `/*CSS*/\n\nbody{\n   text-align:center;\n   font-family: Arial, Helvetica, sans-serif;\n}`
+        document.getElementById("js").innerHTML = ``
+        load()
+    </script>
+  </body>
 </html>

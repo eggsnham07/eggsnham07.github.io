@@ -1,62 +1,29 @@
-body  {
+body {
+    text-align: center;
     font-family: "Ubuntu Condensed", regular;
     background-color: #d4c81e;
 }
 
-
-#jsCode {
-    border: 1px solid #333;
-    background-color: #999;
-}
-
-#jsCode:focus {
-    border: 1px solid #333;
-}
-
-#wrapper {
-    position: relative;
-    text-align: center;
-}
-
-#wrapper:before {
-    content: "";
-    position: relative;
+textarea {
+    width: 31.95%;
+    min-height: 250px;
+    overflow: scroll;
+    margin: auto;
     display: inline-block;
-    width: 100%; height: 100%;
-    vertical-align: middle;
+    background: #999;
+    font-size: 14px;
+    resize: none;
+    border: 2px solid #333;
 }
 
-.content {
-    display: inline-block;
-    vertical-align: middle;
+iframe {
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    height: 35em;
+    border: 2px solid #333;
 }
 
-.inline-div {
-    display:inline-block;
-    width: 310px;
-    height: 512px;
+#code {
+    width: 96%;
 }
-
-#console {
-    height: 100%;
-    margin: 0;
-    overflow-y: auto;
-    font-family: "Ubuntu Mono", monospace;
-    text-align: left;
-    background-color: #999;
-}
-
-
-/*
-* Javascript IDE Console
-*/
-.error {
-    color: red;
-}
-.warning {
-    color: yellow;
-}
-
-
-
-
