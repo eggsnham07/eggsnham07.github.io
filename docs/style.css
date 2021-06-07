@@ -1,11 +1,16 @@
 body  {
     font-family: "Ubuntu Condensed", regular;
+    background-color: #d4c81e;
 }
 
 
-#coder {
-    width: 60%;
-    height: 500px;
+#jsCode {
+    border: 1px solid #333;
+    background-color: #999;
+}
+
+#jsCode:focus {
+    border: 1px solid #333;
 }
 
 #wrapper {
@@ -21,7 +26,7 @@ body  {
     vertical-align: middle;
 }
 
-#content {
+.content {
     display: inline-block;
     vertical-align: middle;
 }
@@ -30,4 +35,13 @@ body  {
     display:inline-block;
     width: 310px;
     height: 512px;
+}
+
+#console {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+    font-family: "Ubuntu Mono", monospace;
+    text-align: left;
+    background-color: #999;
 }
