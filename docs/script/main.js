@@ -1,23 +1,17 @@
-var js = document.getElementById("jsCode")
-const begginerJS = `setTimeout(function(){
-alert("This is part of the Javascript below!")
-}, 1000)`
+/* 
+    Tab keypress handler
+*/
 
+document.getElementById("jsCode").addEventListener('keydown', function(e) {
+    if(e.key == 'Tab' || e.code == "Tab" || e.which == 9) {
+        e.preventDefault()
+        var start = this.selectionStart
+        var end = this.selectionEnd
 
-window.onload = function() {
-    document.getElementById("jsCode").value = begginerJS.toString()
-    loadScript()
-}
-document.getElementById("code").addEventListener("submit", function(e) {runScript();})
+        this.value = this.substring(0, start) +
+            "\t" + this.value.substring(end)
 
-function loadScript() {
-    js.value = localStorage.getItem("SavedJS")
-    var scripting = document.createElement("script")
-    scripting.innerHTML =  `${localStorage.getItem("SavedJS")}`
-    document.body.appendChild(scripting)
-}
-
-function runScript() {
-    localStorage.setItem("SavedJS", js.value)
-    window.location.reload
-}
+        this.selectionStart = 
+            this.selectionEnd = start + 1;
+    }
+})

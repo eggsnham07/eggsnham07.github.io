@@ -60,6 +60,14 @@
             clearConsole = function(message) {
                 $("#console").innerHTML = `Info: Javascript IDE Started!`
             }
+
+            var text = document.getElementById("jsCode")
+                text.onkeydown = function(e) {
+                    if (e.key == "Tab" || e.which === 9) {
+                        e.preventDefault()
+                        text.value = `${text.value}   `
+                    }
+                };
         </script>
     </body>
 </html>
