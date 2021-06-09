@@ -8,8 +8,6 @@
     <meta property="og:image" content="git.eggsnham.com/favicon.ico">
     <!--CSS-->
     <link rel="stylesheet" href="/style.css" />
-    <!--JavaScript-->
-    <script src="/script/IDE.js" id="IDE"></script>
   </head>
 
   <body>
@@ -21,7 +19,6 @@
         document.getElementById("html").innerHTML = `<!--HTML-->\n\n<h1>Welcome to the Website!</h1>\n<h3>This website is for creating HTML, CSS, and JS webpages</h3>`
         document.getElementById("css").innerHTML = `/*CSS*/\n\nbody{\n   text-align:center;\n   font-family: "Ubuntu Condensed", regular;\n}`
         document.getElementById("js").innerHTML = `//JavaScript here`
-        setTimeout(load(), 500)
         getMode()
         
         function getMode() {
@@ -36,5 +33,6 @@
           }
         }
     </script>
+    <script src="/script/IDE.js" id="IDE"></script>
   </body>
 </html>
