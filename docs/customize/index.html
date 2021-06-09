@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--MetaData-->
+        <title>Customization</title>
+        <meta name="description" content="Change style of pages">
+        <meta property="og:image" content="https://git.eggsnham.com/favicon.ico">
+        <!--TODO Load CSS-->
+        <link rel="stylesheet" href="./customize.css">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <input type="checkbox" id="switch"
+                    class="checkbox" />
+        Dark mode
+        <label for="switch" class="toggle">
+            <p>OFF <span style="color:#eeeeee00;">---</span>ON</p>
+        </label>
+
+        <script>
+            const button = document.getElementById("switch")
+            button.onchange = function() {
+                if(!button.checked) {
+                    document.body.style.backgroundColor = "#333"
+                    document.body.style.color = "#eee"
+                    localStorage.setItem("colorMode", "dark")
+                } else if(button.checked) {
+                    document.body.style.backgroundColor = "#eee"
+                    document.body.style.color = "#333"
+                    localStorage.setItem("colorMode", "light")
+                }
+            }
+            document.body.onload = check()
+            // !button.checked = darkmode
+            // button.checked = lightmode
+            function check() {
+                if(localStorage.getItem("colorMode") == "dark") {
+                    document.body.style.backgroundColor = "#333"
+                    document.body.style.color = "#eee"
+                    button.checked = false
+                } else if(localStorage.getItem("colorMode") == "light") {
+                    document.body.style.backgroundColor = "#eee"
+                    document.body.style.color = "#333"
+                    button.checked = true
+                }
+            }
+        </script>
+    </body>
+</html>
