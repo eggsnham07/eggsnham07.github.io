@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <!--MetaData-->
+    <title>Web IDE</title>
+    <link rel="icon" href="/favicon.gif" type="image/gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web Based IDE for HTML, CSS, and JavaScript developers">
+    <meta property="og:image" content="git.eggsnham.com/favicon.ico">
+    <!--CSS-->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <textarea id="html"></textarea>
+    <textarea id="css"></textarea>
+    <textarea id="js"></textarea>
+    <iframe id="code"></iframe>
+    <script>
+        document.getElementById("html").innerHTML = `<!--HTML-->\n\n<h1>Welcome to the Website!</h1>\n<h3>This website is for creating HTML, CSS, and JS webpages</h3>`
+        document.getElementById("css").innerHTML = `/*CSS*/\n\nbody{\n   text-align:center;\n   font-family: "Ubuntu Condensed", regular;\n}`
+        document.getElementById("js").innerHTML = `//JavaScript here`
+        getMode()
+        
+        function getMode() {
+          if(localStorage.getItem("colorMode") == "dark") {
+            document.body.style.backgroundColor = "#333"
+            document.body.style.color = "#eee"
+            document.getElementById("code").style.border = "2px solid #eee"
+          } else {
+            document.body.style.backgroundColor = "#eee"
+            document.body.style.color = "#333"
+            document.getElementById("code").style.border = "2px solid #333"
+          }
+        }
+    </script>
+    <script src="/script/IDE.js" id="IDE"></script>
+  </body>
+</html>
