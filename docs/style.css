@@ -26,3 +26,16 @@ iframe {
 #code {
     width: 96%;
 }
+
+.GitHubCard {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#ghcard {
+    transition: box-shadow 1s;
+}
+
+#ghcard:hover {
+    box-shadow: 12px 6px 6px #555;
+}
