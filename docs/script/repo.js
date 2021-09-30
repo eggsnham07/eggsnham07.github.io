@@ -51,3 +51,29 @@ function getRepo(repo) {
         }
     })
 }
+
+function getUserRepos(user) {
+    fetch("https://api.github.com/users/eggsnham07/repos")
+        .then(res => res.json())
+        .then(res => {
+            const div = document.createElement("div")
+            div.className = "repoHolder"
+
+            const prom = new Promise((resolve, reject) => {
+                for(var i in res) {
+                    const a = document.createElement("a")
+                    console.log(i)
+                    a.style.fontFamily = "Arial, Helvetica, sans-serif;"
+                    a.href = res[i].html_url
+                    a.innerText = res[i].name
+                    a.target = "_blank"
+                    div.appendChild(a)
+                    div.appendChild(document.createElement("br"))
+                    div.appendChild(document.createElement("br"))
+                    if(i == res.length-1) resolve()
+                }
+            })
+
+            prom.then(() => document.body.appendChild(div))
+        })
+}

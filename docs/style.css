@@ -1,6 +1,16 @@
 body {
     text-align: center;
-    font-family: "Ubuntu Condensed", regular;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    background-color: rgb(1, 7, 31);
+}
+
+a {
+    color: rgb(15, 128, 221);
+}
+
+a:visited {
+    color: #8c00ff;
 }
 
 textarea {
@@ -38,4 +48,15 @@ iframe {
 
 #ghcard:hover {
     box-shadow: 12px 6px 6px #555;
+}
+
+.repoHolder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 20%;
+    margin-left: 70%;
+    border: 3px solid #555;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
 }
