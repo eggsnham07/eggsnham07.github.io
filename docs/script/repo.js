@@ -59,7 +59,7 @@ function getUserRepos(user) {
             const div = document.createElement("div")
             div.className = "repoHolder"
 
-            const prom = new Promise((resolve, reject) => {
+            const promise = new Promise((resolve, reject) => {
                 for(var i in res) {
                     const a = document.createElement("a")
                     console.log(i)
@@ -74,6 +74,6 @@ function getUserRepos(user) {
                 }
             })
 
-            prom.then(() => document.body.appendChild(div))
+            promise.then(() => document.body.appendChild(div))
         })
 }
