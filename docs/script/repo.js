@@ -20,6 +20,12 @@ function getRepo(repo) {
     margin-right: 40px;
 }
 
+@media screen and (max-width: 768px) {
+    .gh-card {
+        width: 75%;
+    }
+}
+
 .gh-card a {
     color: #39ff14;
 }
