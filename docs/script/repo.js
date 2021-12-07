@@ -10,7 +10,8 @@ function getRepo(repo) {
 .gh-card {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
-    border: 3px solid #444;
+    color: #eee;
+    border: 3px solid #eee;
     border-radius: 20px;
     width: 35%;
     padding-left: 20px;
@@ -20,7 +21,7 @@ function getRepo(repo) {
 }
 
 .gh-card a {
-    color: #009900;
+    color: #39ff14;
 }
 
 .avatar {
@@ -30,7 +31,7 @@ function getRepo(repo) {
     margin-bottom: 12px;
     margin-right: 12px;
     border-radius: 20px;
-    border: 4px solid #444;
+    border: 4px solid #eee;
     margin-top: 12px;
 }
 </style>`
