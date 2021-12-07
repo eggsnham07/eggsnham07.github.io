@@ -13,7 +13,7 @@ function getRepo(repo) {
     color: #eee;
     border: 3px solid #eee;
     border-radius: 20px;
-    width: 35%;
+    width: 600px;
     padding-left: 20px;
     clear: both;
     display: table;
