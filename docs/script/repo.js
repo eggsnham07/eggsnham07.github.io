@@ -6,7 +6,6 @@ function getRepo(repo) {
     const interval = setInterval(function() {
         if(html != null) {
             if(!document.head.innerHTML.includes("<style>")) {
-                if(window.innerWidth)
                 document.head.innerHTML += `<style>
 .gh-card {
     font-family: Arial, Helvetica, sans-serif;
