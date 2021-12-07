@@ -20,7 +20,7 @@ function getRepo(repo) {
     margin-right: 40px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: calc(768px + 80px)) {
     .gh-card {
         width: 75%;
     }
