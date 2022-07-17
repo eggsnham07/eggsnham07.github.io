@@ -1,0 +1,11 @@
+/**
+ @author eggsnham07
+ @name LimeBlueGradient
+ @version 1.0.1
+ @description A nice Lime Neon Blue gradient theme for discord
+ @authorId 673346482367102979
+*/
+
+:root {
+    --background-image: url("https://git.eggsnham.com/themes/LimeBlueGradient/bg.png")
+}
