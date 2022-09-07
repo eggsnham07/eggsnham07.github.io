@@ -2,4 +2,4 @@ name=Godot Engine
 description=Unoffical Godot Engine package for EPM
 version=3.5
 author=eggsnham07
-purge-files=~/.local/bin/Godot_v3.5-stable_x11.64
+purge-files=~/.local/bin/Godot_v3.5-stable_x11.64,~/.local/bin/res/GodotLogo.png
